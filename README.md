@@ -2,6 +2,7 @@
 
 ## ch1_Prac
 
+### Basic code
 ```
 import cv2
 import sys
@@ -29,7 +30,7 @@ else:
 	
 	# imshow & waitkey is essential to see pics
 ```
-
+### Matplot lib
 ```
 	#Using matplot
 	##By using 'imread func', file == BGR order. So, must be changed into RGB order.

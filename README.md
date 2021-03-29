@@ -2,13 +2,15 @@
 
 ## ch1_Prac
 
+```
 import cv2
 import sys
 
-```
-# how to read file?
+# how to read a file?
+
 img = cv2.imread('cat.bmp')
 # flags=cv2.IMREAD_GRAYSCALE
+
 if img is None:
 	print('img is none')
 	sys.exit()
@@ -19,7 +21,7 @@ else:
 	cv2.namedWindow('image')
 	cv2.imshow('image', img)
 	
-	# To save as another type
+	# To save as another type?
 	cv2.imwrite('catgray.jpg', img)
 	cv2.waitKey()
 	# cv2.destroyWindow('window's name')
@@ -28,43 +30,27 @@ else:
 	# imshow & waitkey is essential to see pics
 ```
 
-### how to read file?
-a=cv2.imread('cat.bmp')
+```
+	#Using matplot
+	##By using 'imread func', file == BGR order. So, must be changed into RGB order.
+	
+	import matplotlib.pyplot as plt
 
-if a is None:
-    print('no image')
-    sys.exit()
-    
-### To save as another type
+	BGRimg=cv2.imread('cat.bmp')   #imread(~,cv2.IMREAD_GRAYSCALE) ==>gray img
+	RGBimg=cv2.cvtColor(BGRimg,cv2.COLOR_BGR2RGB)
 
-cv2.imwrite('cat__.png',a)
+	plt.axis('off') #no axis
+	plt.imshow(RGBimg)
+	plt.show()
 
-cv2.namedWindow('catimage',cv2.WINDOW_NORMAL)
-cv2.imshow('catimage',a)
-cv2.waitKey()
-
-cv2.destroyAllWindows()
-
-
-
-
-import matplotlib.pyplot as plt
-
-BGRimg=cv2.imread('cat.bmp')
-RGBimg=cv2.cvtColor(BGRimg,cv2.COLOR_BGR2RGB)
-
-plt.axis('off')
-plt.imshow(RGBimg)
-plt.show()
-
-Grayimg=cv2.imread('cat.bmp',cv2.IMREAD_GRAYSCALE)
-plt.axis('off')
-plt.imshow(Grayimg,cmap='gray') #colormap=gray
-plt.show()
-
-plt.subplot(121),plt.imshow(RGBimg),plt.axis('off')
-plt.subplot(122),plt.imshow(Grayimg,cmap='gray'),plt.axis('off')
-plt.show()
+	plt.imshow(Grayimg,cmap='gray') #colormap=gray
+	plt.show()
+	
+	#subplot makes U to show several imgs at once
+	plt.subplot(121),plt.imshow(RGBimg),plt.axis('off')
+	plt.subplot(122),plt.imshow(Grayimg,cmap='gray'),plt.axis('off')
+	plt.show()
+```
 
 import glob
 

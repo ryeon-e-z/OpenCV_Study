@@ -64,28 +64,40 @@ if not img_list:
     sys.exit()
 ```
 
+```
+#To show imgs in fulwin
+
 cv2.namedWindow('images',cv2.WINDOW_NORMAL)
 cv2.setWindowProperty('images', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN);
+
+```
+
+```
+#infinite loop
 
 cnt=len(img_list)
 print(cnt)
 idx=0
 
 while True:
-    img=cv2.imread(img_list[idx])
-    if img is None:
-    print('there''s  no images')
-    break
+	img=cv2.imread(img_list[idx])
+
+	if img is None:
+	print('there''s  no images')
+	break
     
-    cv2.imshow('images',img)
-    
-    if cv2.waitKey(1000)>=0:
-    	break
+	cv2.imshow('images',img)
+
+	if cv2.waitKey(1000)>=0:
+	break
+
 	idx+=1
 	if idx>=cnt:
-idx=0
+	idx=0
+	
 cv2.destroyWindow('images')
 
+```
 
     
 

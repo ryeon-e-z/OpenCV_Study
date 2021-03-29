@@ -53,6 +53,8 @@ else:
 	plt.show()
 ```
 
+```
+# To call list of files
 import glob
 
 img_list=glob.glob('.\\images\\*.jpg')
@@ -60,6 +62,7 @@ img_list=glob.glob('.\\images\\*.jpg')
 if not img_list:
     print('NO images')
     sys.exit()
+```
 
 cv2.namedWindow('images',cv2.WINDOW_NORMAL)
 cv2.setWindowProperty('images', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN);
@@ -70,19 +73,17 @@ idx=0
 
 while True:
     img=cv2.imread(img_list[idx])
-
     if img is None:
-        print('there''s  no images')
-        break
+    print('there''s  no images')
+    break
     
     cv2.imshow('images',img)
+    
     if cv2.waitKey(1000)>=0:
-        break
-
-    idx+=1
-    if idx>=cnt:
-        idx=0
-
+    	break
+	idx+=1
+	if idx>=cnt:
+idx=0
 cv2.destroyWindow('images')
 
 

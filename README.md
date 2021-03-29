@@ -5,25 +5,27 @@
 import cv2
 import sys
 
-```python
-# 이미지 파일을 불러옵니다.
+```
+# how to read file?
 img = cv2.imread('cat.bmp')
 # flags=cv2.IMREAD_GRAYSCALE
 if img is None:
 	print('img is none')
 	sys.exit()
 else:
-	# namedWindow에 cv2.normalresize를 인자로 넣어주면 이미지창을
-    # resize 할 수 있다.
+	# To resize a window?
+	put cv2.normalresize in namedWindow
+	
 	cv2.namedWindow('image')
 	cv2.imshow('image', img)
-	# 흑백 사진으로 저장
-	# imshow 와 waitkey를 같이 써야 이미지를 볼 수 있다.
-    # 불러온 이미지를 새로운 이미지파일로 저장할 수 있다.
+	
+	# To save as another type
 	cv2.imwrite('catgray.jpg', img)
 	cv2.waitKey()
-	# cv2.destroyWindow는 window의 이름을 받아 창을 닫는다.
+	# cv2.destroyWindow('window's name')
 	cv2.destroyAllWindows()
+	
+	# imshow & waitkey is essential to see pics
 ```
 
 ### how to read file?
